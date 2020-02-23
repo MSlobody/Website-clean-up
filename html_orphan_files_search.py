@@ -2,6 +2,7 @@ import glob
 import codecs
 import re
 from bs4 import BeautifulSoup
+import csv
 
 i = 0
 total_html = []
@@ -31,9 +32,15 @@ for filepath in glob.iglob('**/*.html', recursive=True):
                # print(num_href)
                 total_crosslinks.append(tags_href)
 j = 0
+orphaned_files = []
 for entry in total_html:
     if entry not in total_crosslinks:
         j += 1
         print(entry)
+        orphaned_files.append(entry)
+
+csv_f = csv.writer(open("myfile.csv", "w"), delimiter=',', quoting=csv.QUOTE_ALL)
+csv_w = csv_f.writerow(orphaned_files)
+
 print(j)
 # Found the orphaned files. Need to find broken links, which are hrefs that go nowhere.
