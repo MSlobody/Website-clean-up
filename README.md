@@ -1,7 +1,7 @@
 # Website_cleanup
 
 
-**Background**
+**Background:**
 Out of date content on a website, particularly pages, that is no longer being used due to new versions becoming available are called orphaned files. These orphaned files in the form of links have no cross linking present, which means they are not referenced by any of the websites pages. 
 
 **The goal:**
